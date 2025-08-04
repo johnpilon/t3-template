@@ -25,3 +25,9 @@ export const posts = createTable(
   }),
   (t) => [index("name_idx").on(t.name)],
 );
+
+export const users = createTable("user", (d) => ({
+  id: d.integer().primaryKey().generatedAlwaysAsIdentity(),
+  email: d.varchar({ length: 256 }),
+  // add more fields here as you need
+}));
